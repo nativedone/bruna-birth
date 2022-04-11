@@ -99,12 +99,6 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
-
-  /* #3f4344
-#ff7b6f
-#f44d7b
-#ff9bb3
-#ffdce2 */
 }
 
 .card:hover,
