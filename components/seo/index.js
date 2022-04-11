@@ -8,7 +8,7 @@ export function SEO({
     twitter: "@nativedone",
   },
   image = {
-    url: "/shared.jpeg",
+    url: "https://res.cloudinary.com/godsmile/image/upload/v1649682530/shared.jpg",
     alt: "Banner for Brunas birth.'",
   },
   websiteUrl = "https://bruna-birth.vercel.app/",
