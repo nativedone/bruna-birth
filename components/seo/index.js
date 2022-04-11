@@ -8,7 +8,7 @@ export function SEO({
     twitter: "@nativedone",
   },
   image = {
-    url: "/assets/shared.jpeg",
+    url: "/shared.jpeg",
     alt: "Banner for Brunas birth.'",
   },
   websiteUrl = "https://bruna-birth.vercel.app/",
