@@ -48,7 +48,7 @@ export const data = {
   assured: {
     slug: "true/assured",
     teaser:
-      "This website can stop running but my words for you will never change...",
+      "This website can stop running but my words for you will never change",
     title: "assured",
     subtitle: "You can trust God's words for you",
     verse: {

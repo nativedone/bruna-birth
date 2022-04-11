@@ -41,12 +41,12 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <h2>{content.verse.content}</h2>
-              <p>{content.verse.reference} &rarr;</p>
+              <p>{content.verse.reference} &#8599;&#65039;</p>
             </a>
           </div>
 
           <Link href="/">
-            <a className={styles.backHome}>Back home</a>
+            <a className={styles.backHome}>&#11013; Back home</a>
           </Link>
         </main>
       </div>

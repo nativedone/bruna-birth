@@ -27,7 +27,7 @@ export default function Home() {
             .map((item) => (
               <Link key={item.slug} href={item.slug}>
                 <a className={styles.card}>
-                  <h2>{item.title}&rarr;</h2>
+                  <h2>{item.title} &rarr;</h2>
                   <p>{item.teaser}</p>
                 </a>
               </Link>
