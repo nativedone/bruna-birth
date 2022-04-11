@@ -22,8 +22,8 @@ export default function Home() {
     <>
       <div className={styles.container}>
         <SEO
-          title={`Bruna is {content.title?.toLowerCase()} by God`}
-          description={`Bruna is {content.title?.toLowerCase()}`}
+          title={`Bruna is ${content.title?.toLowerCase()} by God`}
+          description={content.title?.toLowerCase()}
         />
 
         <main className={styles.main}>
