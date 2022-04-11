@@ -4,14 +4,12 @@ import styles from "../styles/Home.module.css";
 
 import { data } from "../data";
 
+import { SEO } from '../components/seo'
+
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head>
-      <title>Happy birthday Bruna</title>
-        <meta name="description" content={`Celebrate Bruna's birthday with God`} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEO />
 
       <main className={styles.main}>
         <h1 className={styles.title}>

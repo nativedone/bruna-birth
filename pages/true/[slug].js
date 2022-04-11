@@ -7,6 +7,8 @@ import Link from "next/link";
 
 import { data } from "../../data";
 
+import { SEO } from "../../components/seo";
+
 export default function Home() {
   const router = useRouter();
   const { slug } = router.query;
@@ -18,11 +20,10 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Bruna is {content.title?.toLowerCase()} by God</title>
-        <meta name="description" content={`Bruna is {content.title?.toLowerCase()}`} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEO
+        title={`Bruna is {content.title?.toLowerCase()} by God`}
+        description={`Bruna is {content.title?.toLowerCase()}`}
+      />
 
       <Link href="/">
         <a className={styles.backHome}>Back home</a>
