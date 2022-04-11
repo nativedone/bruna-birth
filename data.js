@@ -45,11 +45,11 @@ export const data = {
       link: "https://www.bible.com/bible/111/isa.41.10",
     },
   },
-  unchanged: {
-    slug: "true/unchanged",
+  assured: {
+    slug: "true/assured",
     teaser:
       "This website can stop running but my words for you will never change...",
-    title: "unchanged",
+    title: "assured",
     subtitle: "You can trust God's words for you",
     verse: {
       content:
