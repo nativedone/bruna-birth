@@ -19,34 +19,37 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.container}>
-      <SEO
-        title={`Bruna is {content.title?.toLowerCase()} by God`}
-        description={`Bruna is {content.title?.toLowerCase()}`}
-      />
+    <>
+      <div className={styles.container}>
+        <SEO
+          title={`Bruna is {content.title?.toLowerCase()} by God`}
+          description={`Bruna is {content.title?.toLowerCase()}`}
+        />
 
-      <Link href="/">
-        <a className={styles.backHome}>Back home</a>
-      </Link>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Bruna is <span>{content.title?.toLowerCase()}</span> by God
-        </h1>
+        <main className={styles.main}>
+          <h1 className={styles.title}>
+            Bruna is <span>{content.title?.toLowerCase()}</span> by God
+          </h1>
 
-        <p className={styles.description}>{content.subtitle}</p>
+          <p className={styles.description}>{content.subtitle}</p>
 
-        <div className={styles.grid}>
-          <a
-            href={content.verse.link}
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>{content.verse.content}</h2>
-            <p>{content.verse.reference} &rarr;</p>
-          </a>
-        </div>
-      </main>
-    </div>
+          <div className={styles.grid}>
+            <a
+              href={content.verse.link}
+              className={styles.card}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h2>{content.verse.content}</h2>
+              <p>{content.verse.reference} &rarr;</p>
+            </a>
+          </div>
+
+          <Link href="/">
+            <a className={styles.backHome}>Back home</a>
+          </Link>
+        </main>
+      </div>
+    </>
   );
 }

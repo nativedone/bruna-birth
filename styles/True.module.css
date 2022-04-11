@@ -104,7 +104,7 @@
   border: 1px solid #ff7b6f;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 80%;
+  max-width: 90%;
   line-height: 1.5;
 }
 
@@ -140,8 +140,12 @@
 }
 
 .backHome {
-  position: absolute;
+  bottom: 0;
+  right: 0;
   display: block;
-  padding: 2em;
+  transform: translateX(30vw);
+  padding-right: 2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
   font-weight: bold;
 }
