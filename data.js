@@ -1,7 +1,7 @@
 export const data = {
   valued: {
     slug: "true/valued",
-    teaser: "You're mande in God's image...",
+    teaser: "You're made in God's image...",
     title: "Valued",
     subtitle: "You're infinitely valued in God's eyes",
     verse: {
