@@ -29,7 +29,7 @@ export const data = {
     title: "Loved",
     subtitle: "God's love for you will never fail",
     verse: {
-      content: "Though the mountains be shaken and the hills be removed, yet my unfailing love for you will not be shaken nor my covenant of peace be removed,” says the LORD, who has compassion on you.",
+      content: `”Though the mountains be shaken and the hills be removed, yet my unfailing love for you will not be shaken nor my covenant of peace be removed,” says the LORD, who has compassion on you.`,
       reference: "Isaiah 54:10",
       link: "https://www.bible.com/bible/111/isa.54.10",
     },
