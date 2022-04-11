@@ -9,7 +9,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
       <title>Happy birthday Bruna</title>
-        <meta name="description" content={`Bruna's birthday`} />
+        <meta name="description" content={`Celebrate Bruna's birthday with God`} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
