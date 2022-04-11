@@ -45,6 +45,13 @@
   color: #c8094c;
   text-decoration: none;
 }
+.title span {
+  display: inline-block;
+  padding: 0.2em;
+  border-radius: 0.2em;
+  background: #c8094c;
+  color: white;
+}
 
 .title a:hover,
 .title a:focus,
@@ -66,7 +73,7 @@
 .description {
   margin: 4rem 0;
   line-height: 1.5;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .code {
@@ -97,13 +104,8 @@
   border: 1px solid #ff7b6f;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
-
-  /* #3f4344
-#ff7b6f
-#f44d7b
-#ff9bb3
-#ffdce2 */
+  max-width: 80%;
+  line-height: 1.5;
 }
 
 .card:hover,
@@ -135,4 +137,11 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+.backHome {
+  position: absolute;
+  display: block;
+  padding: 2em;
+  font-weight: bold;
 }
