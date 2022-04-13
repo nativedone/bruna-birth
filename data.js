@@ -18,7 +18,8 @@ export const data = {
     title: "Forgiven",
     subtitle: "You're set free by faith in Jesus alone",
     verse: {
-      content: "Therefore, there is now no condemnation for those who are in Christ Jesus, because through Christ Jesus the law of the Spirit who gives life has set you free from the law of sin and death.",
+      content:
+        "Therefore, there is now no condemnation for those who are in Christ Jesus, because through Christ Jesus the law of the Spirit who gives life has set you free from the law of sin and death.",
       reference: "Romans 8:1-2",
       link: "https://www.bible.com/bible/111/rom.8.1-2",
     },
@@ -40,7 +41,8 @@ export const data = {
     title: "Secured",
     subtitle: "God's Mighty hand will keep you forever",
     verse: {
-      content: "So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.",
+      content:
+        "So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.",
       reference: "Isaiah 41:10",
       link: "https://www.bible.com/bible/111/isa.41.10",
     },
@@ -57,6 +59,18 @@ export const data = {
       reference: "Matthew 24:35",
       link: "https://www.bible.com/bible/111/MAT.24.35.NIV",
     },
-    hide: true
+    hide: true,
+  },
+  powered: {
+    slug: "true/powered",
+    teaser:
+      "God gives you power...",
+    title: "Powered",
+    subtitle: "God's Mighty power lives in you to help overcome any trouble",
+    verse: {
+      content: `I pray that the eyes of your heart may be enlightened in order that you may know the hope to which he has called you, the riches of his glorious inheritance in his holy people, 19and his incomparably great power for us who believe. That power is the same as the mighty strength 20he exerted when he raised Christ from the dead and seated him at his right hand in the heavenly realms, 21far above all rule and authority, power and dominion, and every name that is invoked, not only in the present age but also in the one to come.`,
+      reference: "Ephesians 1:18:21",
+      link: "https://www.bible.com/bible/111/EPH.1.18-21.NIV",
+    },
   },
 };
