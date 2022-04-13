@@ -68,7 +68,7 @@ export const data = {
     title: "Powered",
     subtitle: "God's Mighty power lives in you to help overcome any trouble",
     verse: {
-      content: `I pray that the eyes of your heart may be enlightened in order that you may know the hope to which he has called you, the riches of his glorious inheritance in his holy people, 19and his incomparably great power for us who believe. That power is the same as the mighty strength 20he exerted when he raised Christ from the dead and seated him at his right hand in the heavenly realms, 21far above all rule and authority, power and dominion, and every name that is invoked, not only in the present age but also in the one to come.`,
+      content: `I pray that the eyes of your heart may be enlightened in order that you may know the hope to which he has called you, the riches of his glorious inheritance in his holy people, and his incomparably great power for us who believe. That power is the same as the mighty strength he exerted when he raised Christ from the dead and seated him at his right hand in the heavenly realms, far above all rule and authority, power and dominion, and every name that is invoked, not only in the present age but also in the one to come.`,
       reference: "Ephesians 1:18:21",
       link: "https://www.bible.com/bible/111/EPH.1.18-21.NIV",
     },
