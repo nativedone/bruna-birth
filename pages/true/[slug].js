@@ -1,7 +1,9 @@
-import Head from "next/head";
-import Image from "next/image";
+import { useState, useEffect } from "react";
+
 import styles from "../../styles/True.module.css";
 import { useRouter } from "next/router";
+
+import { RoughNotation } from "react-rough-notation";
 
 import Link from "next/link";
 
@@ -10,6 +12,11 @@ import { data } from "../../data";
 import { SEO } from "../../components/seo";
 
 export default function Home() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    setShow(true);
+  }, []);
   const router = useRouter();
   const { slug } = router.query;
   const content = data[slug];
@@ -28,7 +35,13 @@ export default function Home() {
 
         <main className={styles.main}>
           <h1 className={styles.title}>
-            Bruna is <span>{content.title?.toLowerCase()}</span> by God
+            Bruna is{" "}
+            <RoughNotation type="highlight" show={show} color="#c8094c">
+              <span style={{ color: show ? "white" : "black" }}>
+                {content.title?.toLowerCase()}
+              </span>
+            </RoughNotation>{" "}
+            by God
           </h1>
 
           <p className={styles.description}>{content.subtitle}</p>

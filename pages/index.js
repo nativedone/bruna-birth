@@ -1,12 +1,20 @@
-import Head from "next/head";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
+import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
+
 import { data } from "../data";
 
-import { SEO } from '../components/seo'
+import { SEO } from "../components/seo";
 
 export default function Home() {
+  const [show, setShow] = useState(false)
+
+  useEffect(() => {
+    setShow(true)
+  }, [])
+
   return (
     <div className={styles.container}>
       <SEO />
@@ -17,7 +25,10 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Always remember what is <code className={styles.code}>true</code>{" "}
+          Always remember what is{" "}
+          <RoughNotation type="highlight" show={show} color="#c8094c">
+            <code className={styles.code} style={{ color: show ? 'white' : 'black' }}>true</code>
+          </RoughNotation>{" "}
           about you:
         </p>
 
@@ -27,7 +38,7 @@ export default function Home() {
             .map((item) => (
               <Link key={item.slug} href={item.slug}>
                 <a className={styles.card}>
-                  <h2>{item.title} &rarr;</h2>
+                  <h2>{item.title} <span>&rarr;</span></h2>
                   <p>{item.teaser}</p>
                 </a>
               </Link>
@@ -38,11 +49,11 @@ export default function Home() {
       <footer className={styles.footer}>
         <Link href={data.assured.slug}>
           <a>
-            <div className="highlight">Powered by <span>JESUS</span></div>
-            <br />
-            <div>
-              {data.assured.teaser} &rarr;
+            <div className="highlight">
+              Powered by <span>JESUS</span>
             </div>
+            <br />
+            <div>{data.assured.teaser} &rarr;</div>
           </a>
         </Link>
       </footer>
