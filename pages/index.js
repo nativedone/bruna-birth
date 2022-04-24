@@ -8,12 +8,23 @@ import { data } from "../data";
 
 import { SEO } from "../components/seo";
 
+import { useLocalStorage } from "react-use";
+
+import dynamic from "next/dynamic";
+
+
 export default function Home() {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
+  const [seenItems] = useLocalStorage("bruna-seen-items", {});
 
   useEffect(() => {
-    setShow(true)
-  }, [])
+    setShow(true);
+  }, []);
+
+  const UnseenItem = dynamic(() => import("../components/unseen-item"), {
+    ssr: false,
+  });
+  
 
   return (
     <div className={styles.container}>
@@ -27,7 +38,12 @@ export default function Home() {
         <p className={styles.description}>
           Always remember what is{" "}
           <RoughNotation type="highlight" show={show} color="#c8094c">
-            <code className={styles.code} style={{ color: show ? 'white' : 'black' }}>true</code>
+            <code
+              className={styles.code}
+              style={{ color: show ? "white" : "black" }}
+            >
+              true
+            </code>
           </RoughNotation>{" "}
           about you:
         </p>
@@ -38,8 +54,13 @@ export default function Home() {
             .map((item) => (
               <Link key={item.slug} href={item.slug}>
                 <a className={styles.card}>
-                  <h2>{item.title} <span>&rarr;</span></h2>
+                  <h2>
+                    {item.title} <span>&rarr;</span>
+                  </h2>
                   <p>{item.teaser}</p>
+                  {shouldRenderUnseenBadge({ seenItems, item }) && (
+                    <UnseenItem />
+                  )}
                 </a>
               </Link>
             ))}
@@ -59,4 +80,14 @@ export default function Home() {
       </footer>
     </div>
   );
+}
+
+function shouldRenderUnseenBadge({ seenItems, item }) {
+  const value = item.slug.split("/")[1];
+
+  if (!seenItems) {
+    return true;
+  }
+
+  return !Object.values(seenItems).includes(value);
 }

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import styles from "../../styles/True.module.css";
 import { useRouter } from "next/router";
+import { useLocalStorage } from "react-use";
 
 import { RoughNotation } from "react-rough-notation";
 
@@ -11,15 +12,27 @@ import { data } from "../../data";
 
 import { SEO } from "../../components/seo";
 
-export default function Home() {
+export default function Details() {
   const [show, setShow] = useState(false);
+  const [value, setValue] = useLocalStorage("bruna-seen-items", {});
 
-  useEffect(() => {
-    setShow(true);
-  }, []);
+
+
   const router = useRouter();
   const { slug } = router.query;
   const content = data[slug];
+
+  useEffect(() => {
+    setShow(true);
+
+    if (!slug) {
+      return;
+    }
+
+    const newValue = { ...value, [slug]: slug };
+
+    setValue(newValue);
+  }, [setValue, slug, value]);
 
   if (!content) {
     return null;
