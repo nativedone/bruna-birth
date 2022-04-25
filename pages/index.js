@@ -12,10 +12,9 @@ import { useLocalStorage } from "react-use";
 
 import dynamic from "next/dynamic";
 
-
 export default function Home() {
   const [show, setShow] = useState(false);
-  const [seenItems] = useLocalStorage("bruna-seen-items", {});
+  const [seenItems] = useLocalStorage("bruna-seen-items-bird", {});
 
   useEffect(() => {
     setShow(true);
@@ -24,7 +23,6 @@ export default function Home() {
   const UnseenItem = dynamic(() => import("../components/unseen-item"), {
     ssr: false,
   });
-  
 
   return (
     <div className={styles.container}>
@@ -59,7 +57,12 @@ export default function Home() {
                   </h2>
                   <p>{item.teaser}</p>
                   {shouldRenderUnseenBadge({ seenItems, item }) && (
-                    <UnseenItem />
+                    <span style={{ position: "absolute", top: 10, right: 10 }}>
+                      <span style={{ fontSize: 50, position: "relative" }}>
+                        🐣
+                        <UnseenItem />
+                      </span>
+                    </span>
                   )}
                 </a>
               </Link>

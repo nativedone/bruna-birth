@@ -14,9 +14,7 @@ import { SEO } from "../../components/seo";
 
 export default function Details() {
   const [show, setShow] = useState(false);
-  const [value, setValue] = useLocalStorage("bruna-seen-items", {});
-
-
+  const [value, setValue] = useLocalStorage("bruna-seen-items-bird", {});
 
   const router = useRouter();
   const { slug } = router.query;
