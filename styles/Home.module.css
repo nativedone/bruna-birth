@@ -141,8 +141,8 @@
 }
 
 .unseenItem {
-  font-size: 35px;
+  font-size: 30px;
   position: absolute;
-  top: 28px;
-  right: 4px;
+  top: 24px;
+  right: 2px;
 }

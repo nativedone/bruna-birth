@@ -58,7 +58,7 @@ export default function Home() {
                   <p>{item.teaser}</p>
                   {shouldRenderUnseenBadge({ seenItems, item }) && (
                     <span style={{ position: "absolute", top: 10, right: 10 }}>
-                      <span style={{ fontSize: 50, position: "relative" }}>
+                      <span style={{ fontSize: 33, position: "relative" }}>
                         🐣
                         <UnseenItem />
                       </span>
