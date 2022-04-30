@@ -1,4 +1,5 @@
 export const data = {
+  
   valued: {
     slug: "true/valued",
     teaser: "You're made in God's image...",
@@ -10,6 +11,17 @@ export const data = {
       male and female he created them.`,
       reference: "Genesis 1:27",
       link: "https://www.bible.com/bible/111/gen.1.27",
+    },
+  },
+  protected: {
+    slug: "true/protected",
+    teaser: "You have protection in God...",
+    title: "Protected",
+    subtitle: "Jesus is the fortress where you can always find shelter, encouragement, force and purpose to overcome all anxieties of life.",
+    verse: {
+      content: `God is our refuge and strength, an ever-present help in trouble.`,
+      reference: "Psalm 46:1",
+      link: "https://www2.bible.com/bible/111/PSA.46.1",
     },
   },
   forgiven: {

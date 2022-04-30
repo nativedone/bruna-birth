@@ -30,7 +30,15 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Happy birthday <div>Bruna &#127881;</div>
+          Happy{" "}
+          <RoughNotation type="highlight" show={show} color="#c8094c">
+            <span
+              style={{ color: show ? "white" : "black" }}
+            >
+              new
+            </span>
+          </RoughNotation>{" "}
+          birth <div>Bruna &#127881;</div>
         </h1>
 
         <p className={styles.description}>
