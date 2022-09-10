@@ -14,7 +14,7 @@ import { SEO } from "../../components/seo";
 
 export default function Details() {
   const [show, setShow] = useState(false);
-  const [color, setColor] = useState('black');
+  const [color, setColor] = useState('#c8094c');
   const [_, setValue] = usePersistedState();
 
   const router = useRouter();
@@ -53,7 +53,7 @@ export default function Details() {
           <h1 className={styles.title}>
             Bruna is{" "}
             <RoughNotation type="highlight" show={show} color="#c8094c">
-              <span style={{ color }}>
+              <span style={{ color, transition: "color 0.5s ease" }}>
                 {content.title?.toLowerCase()}
               </span>
             </RoughNotation>{" "}
