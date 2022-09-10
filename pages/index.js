@@ -12,7 +12,7 @@ import dynamic from "next/dynamic";
 
 export default function Home() {
   const [show, setShow] = useState(false);
-  const [color, setColor] = useState("black");
+  const [color, setColor] = useState("#c8094c");
 
   useEffect(() => {
     setShow(true);
@@ -34,7 +34,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Happy{" "}
           <RoughNotation type="highlight" show={show} color="#c8094c">
-            <span style={{ color }}>new</span>
+            <span style={{ color, transition: "color 0.5s ease" }}>new</span>
           </RoughNotation>{" "}
           birth <div>Bruna &#127881;</div>
         </h1>
@@ -42,7 +42,7 @@ export default function Home() {
         <p className={styles.description}>
           Always remember what is{" "}
           <RoughNotation type="highlight" show={show} color="#c8094c">
-            <code className={styles.code} style={{ color }}>
+            <code className={styles.code} style={{ color, transition: "color 0.5s ease" }}>
               true
             </code>
           </RoughNotation>{" "}
