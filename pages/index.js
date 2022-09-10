@@ -2,22 +2,24 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
-import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
+import { RoughNotation } from "react-rough-notation";
 
 import { data } from "../data";
 
 import { SEO } from "../components/seo";
 
-import { useLocalStorage } from "react-use";
-
 import dynamic from "next/dynamic";
 
 export default function Home() {
   const [show, setShow] = useState(false);
-  const [seenItems] = useLocalStorage("bruna-seen-items-bird", {});
+  const [color, setColor] = useState("black");
 
   useEffect(() => {
     setShow(true);
+
+    setTimeout(() => {
+      setColor("white");
+    }, 800);
   }, []);
 
   const UnseenItem = dynamic(() => import("../components/unseen-item"), {
@@ -32,11 +34,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Happy{" "}
           <RoughNotation type="highlight" show={show} color="#c8094c">
-            <span
-              style={{ color: show ? "white" : "black" }}
-            >
-              new
-            </span>
+            <span style={{ color }}>new</span>
           </RoughNotation>{" "}
           birth <div>Bruna &#127881;</div>
         </h1>
@@ -44,10 +42,7 @@ export default function Home() {
         <p className={styles.description}>
           Always remember what is{" "}
           <RoughNotation type="highlight" show={show} color="#c8094c">
-            <code
-              className={styles.code}
-              style={{ color: show ? "white" : "black" }}
-            >
+            <code className={styles.code} style={{ color }}>
               true
             </code>
           </RoughNotation>{" "}
@@ -64,14 +59,8 @@ export default function Home() {
                     {item.title} <span>&rarr;</span>
                   </h2>
                   <p>{item.teaser}</p>
-                  {shouldRenderUnseenBadge({ seenItems, item }) && (
-                    <span style={{ position: "absolute", top: 10, right: 10 }}>
-                      <span style={{ fontSize: 33, position: "relative" }}>
-                        🐣
-                        <UnseenItem />
-                      </span>
-                    </span>
-                  )}
+
+                  <UnseenItem item={item} />
                 </a>
               </Link>
             ))}
@@ -91,14 +80,4 @@ export default function Home() {
       </footer>
     </div>
   );
-}
-
-function shouldRenderUnseenBadge({ seenItems, item }) {
-  const value = item.slug.split("/")[1];
-
-  if (!seenItems) {
-    return true;
-  }
-
-  return !Object.values(seenItems).includes(value);
 }

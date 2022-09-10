@@ -1,12 +1,38 @@
 import styles from "../../styles/Home.module.css";
 
-export default function UnseenItem() {
+import { usePersistedState } from "../../hooks/usePersistedState";
+
+export default function UnseenItem({ item }) {
+  const [seenItems, _] = usePersistedState();
+
+  const shouldRender = shouldRenderUnseenBadge({ seenItems, item });
+
+  if(!shouldRender){
+    return null;
+  }
+
   return (
-    <span className={styles.unseenItem}>
-      <UnseenItemIcon />
+    <span style={{ position: "absolute", top: 10, right: 10 }}>
+      <span style={{ fontSize: 33, position: "relative" }}>
+        🐣
+        <span className={styles.unseenItem}>
+          <UnseenItemIcon />
+        </span>
+      </span>
     </span>
   );
 }
+
+function shouldRenderUnseenBadge({ seenItems, item }) {
+  const value = item.slug.split("/")[2];
+
+  if (!seenItems) {
+    return true;
+  }
+
+  return !seenItems.includes(value);
+}
+
 
 export const UnseenItemIcon = (props) => (
   <svg

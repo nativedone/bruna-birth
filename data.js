@@ -1,7 +1,7 @@
 export const data = {
   
   valued: {
-    slug: "true/valued",
+    slug: "/true/valued",
     teaser: "You're made in God's image...",
     title: "Valued",
     subtitle: "You're infinitely valued in God's eyes",
@@ -13,8 +13,30 @@ export const data = {
       link: "https://www.bible.com/bible/111/gen.1.27",
     },
   },
+  adopted: {
+    slug: "/true/adopted",
+    teaser: "God is your father...",
+    title: "Adopted",
+    subtitle: "You don't need to do any work to gain God's love. He loves you because you're his daughter.",
+    verse: {
+      content: `We love because he first loved us.`,
+      reference: "1 John 4:19",
+      link: "https://www2.bible.com/bible/111/1jn.4.19",
+    },
+  },
+  comforted: {
+    slug: "/true/comforted",
+    teaser: "God comforts you...",
+    title: "Comforted",
+    subtitle: "God's comfort for you has a purpose.",
+    verse: {
+      content: `Praise be to the God and Father of our Lord Jesus Christ, the Father of compassion and the God of all comfort, who comforts us in all our troubles, so that we can comfort those in any trouble with the comfort we ourselves receive from God. For just as we share abundantly in the sufferings of Christ, so also our comfort abounds through Christ.`,
+      reference: "2 Corinthians 1:3-5",
+      link: "https://www2.bible.com/bible/111/2co.1.3-5",
+    },
+  },
   protected: {
-    slug: "true/protected",
+    slug: "/true/protected",
     teaser: "You have protection in God...",
     title: "Protected",
     subtitle: "Jesus is the fortress where you can always find shelter, encouragement, force and purpose to overcome all anxieties of life.",
@@ -25,7 +47,7 @@ export const data = {
     },
   },
   forgiven: {
-    slug: "true/forgiven",
+    slug: "/true/forgiven",
     teaser: "You're in Christ Jesus...",
     title: "Forgiven",
     subtitle: "You're set free by faith in Jesus alone",
@@ -37,7 +59,7 @@ export const data = {
     },
   },
   loved: {
-    slug: "true/loved",
+    slug: "/true/loved",
     teaser: "God's love for you never changes...",
     title: "Loved",
     subtitle: "God's love for you will never fail",
@@ -48,7 +70,7 @@ export const data = {
     },
   },
   secured: {
-    slug: "true/secured",
+    slug: "/true/secured",
     teaser: "God is with you always...",
     title: "Secured",
     subtitle: "God's Mighty hand will keep you forever",
@@ -60,7 +82,7 @@ export const data = {
     },
   },
   assured: {
-    slug: "true/assured",
+    slug: "/true/assured",
     teaser:
       "This website can stop running but my words for you will never change",
     title: "assured",
@@ -74,7 +96,7 @@ export const data = {
     hide: true,
   },
   powered: {
-    slug: "true/powered",
+    slug: "/true/powered",
     teaser:
       "God gives you power...",
     title: "Powered",
