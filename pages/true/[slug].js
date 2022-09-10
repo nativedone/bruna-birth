@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import styles from "../../styles/True.module.css";
 import { useRouter } from "next/router";
-import { useLocalStorage } from "react-use";
+import { usePersistedState } from "../../hooks/usePersistedState";
 
 import { RoughNotation } from "react-rough-notation";
 
@@ -14,7 +14,8 @@ import { SEO } from "../../components/seo";
 
 export default function Details() {
   const [show, setShow] = useState(false);
-  const [value, setValue] = useLocalStorage("bruna-seen-items-bird", {});
+  const [color, setColor] = useState('black');
+  const [_, setValue] = usePersistedState();
 
   const router = useRouter();
   const { slug } = router.query;
@@ -23,14 +24,18 @@ export default function Details() {
   useEffect(() => {
     setShow(true);
 
+    setTimeout(() => {
+      setColor('white')
+
+    }, 800)
+
     if (!slug) {
       return;
     }
 
-    const newValue = { ...value, [slug]: slug };
 
-    setValue(newValue);
-  }, [setValue, slug, value]);
+    setValue(slug)
+  }, [setValue, slug]);
 
   if (!content) {
     return null;
@@ -48,7 +53,7 @@ export default function Details() {
           <h1 className={styles.title}>
             Bruna is{" "}
             <RoughNotation type="highlight" show={show} color="#c8094c">
-              <span style={{ color: show ? "white" : "black" }}>
+              <span style={{ color }}>
                 {content.title?.toLowerCase()}
               </span>
             </RoughNotation>{" "}
