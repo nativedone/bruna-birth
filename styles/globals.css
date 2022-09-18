@@ -55,6 +55,16 @@ a {
  font-size: 0.7em !important;
 }
 
+.scripture-styles .wj {
+  color: #111 !important;
+}
+
+.scripture-styles [class^="p"] {
+  text-indent: 1em !important;
+  font-weight: 300 !important;
+}
+
+
  *::-webkit-scrollbar {
   width: var(--scrollbarWidth,12px);
   height: var(--scrollbarWidth,12px);
