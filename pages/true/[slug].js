@@ -78,21 +78,23 @@ export default function Details() {
             <a onClick={() => setShowBible(!showBible)} className={styles.card}>
               <h2>{content.verse.content}</h2>
               <p>{content.verse.reference}</p>
-              <div className={styles.readFullChapter}>
+              <div className={styles.toggleFullChapter}>
                 {!showBible ? "Reval" : "Hide"} full chapter{" "}
                 {!showBible && <span>&#x2198;</span>}
               </div>
             </a>
-          </div>
-
-          <div className={styles.grid}>
+         
             <div
               style={{ display: showBible ? "block" : "none" }}
               data-gb-widget="passage"
               data-passage={content.verse.link}
               className={styles.fullChapterPassage}
               key={content.verse.content}
-            />
+            >
+               <a onClick={() => setShowBible(!showBible)} className={styles.toggleFullChapter}>
+                Hide full chapter
+              </a>
+            </div>
           </div>
 
           <Link href="/">

@@ -78,19 +78,8 @@
 .description {
   margin: 4rem 0;
   line-height: 1.5;
-  font-size: 2rem;
+  font-size: 1.65rem;
   max-width: 80%;
-}
-
-.code {
-  color: black;
-  font-weight: bold;
-  border-radius: 5px;
-  padding: 0.35rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-  transition: all 0.8s;
 }
 
 .grid {
@@ -132,20 +121,24 @@
 .card:hover,
 .card:focus,
 .card:active {
+  cursor: pointer;
   /* outline: 4px solid #c8094c; */
   /* box-shadow: 0px 0px 20px 0px #c8094c; */
-  box-shadow: 6px 9px 15px #c8094c;
+  /* box-shadow: 6px 9px 15px #c8094c; */
 }
 
 .card h2 {
   margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+  font-size: 1.65rem;
+  font-weight: 300;
 }
 
 .card p {
   margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 100;
+  text-transform: uppercase;
 }
 
 .logo {
@@ -177,24 +170,30 @@
 }
 
 
-.readFullChapter {
+.toggleFullChapter {
   color: #c8094c;
   float: right;
 
   text-transform: uppercase;
   font-size: 0.7em;
   font-weight: 700;
+
+  padding: 0.5em 0.8em;
+  border-radius: 10px; 
+}
+.toggleFullChapter:hover {
+  cursor: pointer;
 }
 
-.readFullChapter > span {
+.toggleFullChapter > span {
   display: inline-block;
   transform: scale(0.1);
 }
 
-.card:hover .readFullChapter {
+.card:hover .toggleFullChapter {
   transform: scale(1.05);
 }
-.card:hover .readFullChapter span{
+.card:hover .toggleFullChapter span{
    transform: scale(1.05);
 }
 
@@ -202,7 +201,7 @@
 
 .fullChapterPassage {
 
-  margin: "0 auto";
+  margin: 2rem auto auto auto;
   padding: 1.5rem;
   text-align: left;
   color: inherit;
