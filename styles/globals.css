@@ -1,3 +1,19 @@
+@import-normalize;
+
+:root {
+  --safeViewportWidth: calc(100vw - var(--scrollbarWidth));
+  --color-gray-100: hsl(225deg, 25%, 95%);
+    --color-gray-200: hsl(225deg, 16%, 90%);
+    --color-gray-300: hsl(225deg, 8%, 80%);
+    --color-gray-400: hsl(225deg, 8%, 70%);
+    --color-gray-500: hsl(225deg, 7%, 60%);
+    --color-gray-600: hsl(225deg, 15%, 50%);
+    --color-gray-700: hsl(225deg, 12%, 40%);
+    --color-gray-900: hsl(225deg, 25%, 20%);
+    --color-gray-1000: hsl(225deg, 15%, 15%);
+}
+
+
 html,
 body {
   padding: 0;
@@ -5,6 +21,14 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     background-color: #ffdce2;
+
+}
+body {
+  overflow-y: scroll;
+}
+* {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
 }
 
 
@@ -16,4 +40,32 @@ a {
 
 * {
   box-sizing: border-box;
+ 
+}
+
+.scripture-styles {
+  font-size: 20px !important;
+  line-height: 2 !important;
+  letter-spacing: 0.05em !important;
+  color: #111 !important;;
+}
+
+.gb-passage-reference {
+ text-transform: uppercase !important;
+ font-size: 0.7em !important;
+}
+
+ *::-webkit-scrollbar {
+  width: var(--scrollbarWidth,12px);
+  height: var(--scrollbarWidth,12px);
+  background-color: #ffdce2;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--color-gray-700);
+  border: 2px solid #ffdce2;
+} 
+* {
+  scrollbar-width: thin;
+  scrollbar-color:  var(--color-gray-700) #ffdce2;
 }

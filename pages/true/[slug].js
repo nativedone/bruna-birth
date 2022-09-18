@@ -12,9 +12,12 @@ import { data } from "../../data";
 
 import { SEO } from "../../components/seo";
 
+import Script from "next/script";
+
 export default function Details() {
   const [show, setShow] = useState(false);
-  const [color, setColor] = useState('#c8094c');
+  const [showBible, setShowBible] = useState(false);
+  const [color, setColor] = useState("#c8094c");
   const [_, setValue] = usePersistedState();
 
   const router = useRouter();
@@ -25,16 +28,14 @@ export default function Details() {
     setShow(true);
 
     setTimeout(() => {
-      setColor('white')
-
-    }, 800)
+      setColor("white");
+    }, 800);
 
     if (!slug) {
       return;
     }
 
-
-    setValue(slug)
+    setValue(slug);
   }, [setValue, slug]);
 
   if (!content) {
@@ -43,12 +44,23 @@ export default function Details() {
 
   return (
     <>
-      <div className={styles.container}>
-        <SEO
-          title={`Bruna is ${content.title?.toLowerCase()} by God`}
-          description={content.title?.toLowerCase()}
-        />
+      <SEO
+        title={`Bruna is ${content.title?.toLowerCase()} by God`}
+        description={content.title?.toLowerCase()}
+      />
 
+      <Script
+        id={`GLOBALBIBLE-js${new Date()}`}
+        src="https://bibles.org/static/widget/v2/widget.js"
+        onLoad={() => {
+          GLOBALBIBLE.init({
+            url: "https://bibles.org",
+            bible: "78a9f6124f344018-01",
+          });
+        }}
+      />
+
+      <div className={styles.container}>
         <main className={styles.main}>
           <h1 className={styles.title}>
             Bruna is{" "}
@@ -63,15 +75,24 @@ export default function Details() {
           <p className={styles.description}>{content.subtitle}</p>
 
           <div className={styles.grid}>
-            <a
-              href={content.verse.link}
-              className={styles.card}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a onClick={() => setShowBible(!showBible)} className={styles.card}>
               <h2>{content.verse.content}</h2>
-              <p>{content.verse.reference} &#x2197;</p>
+              <p>{content.verse.reference}</p>
+              <div className={styles.readFullChapter}>
+                {!showBible ? "Reval" : "Hide"} full chapter{" "}
+                {!showBible && <span>&#x2198;</span>}
+              </div>
             </a>
+          </div>
+
+          <div className={styles.grid}>
+            <div
+              style={{ display: showBible ? "block" : "none" }}
+              data-gb-widget="passage"
+              data-passage={content.verse.link}
+              className={styles.fullChapterPassage}
+              key={content.verse.content}
+            />
           </div>
 
           <Link href="/">
