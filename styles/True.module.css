@@ -1,14 +1,14 @@
 .container {
-  padding: 0 1rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .main {
-  min-height: 100vh;
   padding: 4rem 0;
+  min-height: 100vh;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -64,7 +64,6 @@
 }
 
 .title {
-  margin: 0;
   line-height: 1.15;
   font-size: 4rem;
 }
@@ -72,6 +71,8 @@
 .title,
 .description {
   text-align: center;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .description {
@@ -94,10 +95,12 @@
 
 .grid {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+  width: 90%;
+
+  margin: 0 auto;
 }
 
 .card {
@@ -132,7 +135,6 @@
   /* outline: 4px solid #c8094c; */
   /* box-shadow: 0px 0px 20px 0px #c8094c; */
   box-shadow: 6px 9px 15px #c8094c;
-  transform: scale(1.05);
 }
 
 .card h2 {
@@ -165,9 +167,62 @@
   bottom: 0;
   right: 0;
   display: block;
-  transform: translateX(30vw);
   padding-right: 2em;
   padding-top: 2em;
   padding-bottom: 2em;
   font-weight: bold;
+
+  align-self: flex-end;
+  padding-right: 10%;
 }
+
+
+.readFullChapter {
+  color: #c8094c;
+  float: right;
+
+  text-transform: uppercase;
+  font-size: 0.7em;
+  font-weight: 700;
+}
+
+.readFullChapter > span {
+  display: inline-block;
+  transform: scale(0.1);
+}
+
+.card:hover .readFullChapter {
+  transform: scale(1.05);
+}
+.card:hover .readFullChapter span{
+   transform: scale(1.05);
+}
+
+
+
+.fullChapterPassage {
+
+  margin: "0 auto";
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  /* box-shadow: 0px 0px 10px 0px #ff7b6f; */
+  box-shadow: 0.5px 0.2px 1.2px rgba(255, 54, 27, 0.015),
+    1px 0.5px 2.7px rgba(255, 54, 27, 0.022),
+    1.7px 0.9px 4.6px rgba(255, 54, 27, 0.027),
+    2.6px 1.4px 6.9px rgba(255, 54, 27, 0.031),
+    3.8px 2px 10px rgba(255, 54, 27, 0.035),
+    5.3px 2.8px 14.2px rgba(255, 54, 27, 0.039),
+    7.5px 4px 20.1px rgba(255, 54, 27, 0.043),
+    11px 5.8px 29.2px rgba(255, 54, 27, 0.048),
+    16.9px 9px 45px rgba(255, 54, 27, 0.055),
+    30px 16px 80px rgba(255, 54, 27, 0.07);
+
+  border-radius: 10px;
+  transition: all 0.15s ease;
+  /* max-width: 100%; */
+  width: 90%;
+  line-height: 1.5;
+}
+
