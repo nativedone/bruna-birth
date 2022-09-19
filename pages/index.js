@@ -56,7 +56,7 @@ export default function Home() {
               <Link key={item.slug} href={item.slug}>
                 <a className={styles.card}>
                   <h2>
-                    {item.title} <span>&rarr;</span>
+                    {item.title}
                   </h2>
                   <p>{item.teaser}</p>
 
