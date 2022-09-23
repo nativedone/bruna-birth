@@ -7,6 +7,7 @@ import { RoughNotation } from "react-rough-notation";
 import { data } from "../data";
 
 import { SEO } from "../components/seo";
+import { GlobeStats } from "../components/globe-stats";
 
 import dynamic from "next/dynamic";
 
@@ -40,14 +41,22 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Always remember what is{" "}
+          Today, you joined 10K people in remembering what is
+          always {"  "}
           <RoughNotation type="highlight" show={show} color="#c8094c">
-            <code className={styles.code} style={{ color, transition: "color 0.5s ease" }}>
+            <code
+              className={styles.code}
+              style={{ color, transition: "color 0.5s ease" }}
+            >
               true
             </code>
-          </RoughNotation>{" "}
+          </RoughNotation>{"  "}
           about you:
         </p>
+
+        <div className={styles.globeStatsContainer}>
+          <GlobeStats />
+        </div>
 
         <div className={styles.grid}>
           {Object.values(data)
@@ -55,9 +64,7 @@ export default function Home() {
             .map((item) => (
               <Link key={item.slug} href={item.slug}>
                 <a className={styles.card}>
-                  <h2>
-                    {item.title}
-                  </h2>
+                  <h2>{item.title}</h2>
                   <p>{item.teaser}</p>
 
                   <UnseenItem item={item} />
