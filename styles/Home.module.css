@@ -65,7 +65,9 @@
 }
 
 .description {
-  margin: 4rem 0;
+  margin-top: 4rem;
+  margin-bottom: 0rem;
+  /* margin: 4rem 0; */
   line-height: 1.5;
   font-size: 1.5rem;
 }
@@ -146,3 +148,16 @@
   top: 24px;
   right: 2px;
 }
+
+.globeStatsContainer {
+  position: relative;
+  width: 40%;
+  aspect-ratio: 1;
+}
+@media (max-width: 600px) {
+  .globeStatsContainer {
+    width: 115%;
+  }
+}
+
+
