@@ -1,5 +1,16 @@
 export const data = {
   
+  listened: {
+    slug: "/true/listened",
+    teaser: "You can always be...",
+    title: "Listened",
+    subtitle: "You can always be sure that God listens and answers your prayers",
+    verse: {
+      content: `Call to me and I will answer you and tell you great and unsearchable things you do not know.`,
+      reference: "Jeremiah 33:3",
+      link: "jer.33",
+    },
+  },
   valued: {
     slug: "/true/valued",
     teaser: "You're made in God's image...",
